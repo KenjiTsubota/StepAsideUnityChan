@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class ItemDestroyer : MonoBehaviour {
 	//カメラのオブジェクト
-	private GameObject camera;
+	Camera cam;
 
 	// Use this for initialization
 	void Start () {
 		//カメラのオブジェクトを取得
-		this.camera = GameObject.Find ("Main Camera");
+		this.cam = Camera.main;
 
 	}
 
 	// Update is called once per frame
 	void Update () {
 		//カメラの位置より後ろであればオブジェクトを破棄する
-		if (this.transform.position.z < camera.transform.position.z) {
+		if (this.transform.position.z < cam.transform.position.z) {
 
 			//オブジェクトを破棄する
 			Destroy (this.gameObject);
